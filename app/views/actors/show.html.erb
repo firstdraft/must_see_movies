@@ -20,8 +20,11 @@
               <dd><%= @actor.born_on %></dd>
 
               <dt>Image url</dt>
-              <dd><%= @actor.image_url %></dd>
-
+              <dd>
+                <div class="thumbnail">
+                  <%= image_tag @actor.image_url %>
+                </div>
+              </dd>
             </dl>
             <div class="btn-group btn-group-justified">
               <%= link_to actors_url, :class => "btn btn-primary" do %>

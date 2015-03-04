@@ -16,18 +16,21 @@
               <dt>Year</dt>
               <dd><%= @movie.year %></dd>
 
+              <dt>Director</dt>
+              <dd><%= @movie.director_id %></dd>
+
               <dt>Duration</dt>
-              <dd><%= @movie.duration %></dd>
+              <dd><%= @movie.duration %> minutes</dd>
 
               <dt>Description</dt>
               <dd><%= @movie.description %></dd>
 
               <dt>Image url</dt>
-              <dd><%= @movie.image_url %></dd>
-
-              <dt>Director</dt>
-              <dd><%= @movie.director_id %></dd>
-
+              <dd>
+                <div class="thumbnail">
+                  <%= image_tag @movie.image_url %>
+                </div>
+              </dd>
             </dl>
             <div class="btn-group btn-group-justified">
               <%= link_to movies_url, :class => "btn btn-primary" do %>

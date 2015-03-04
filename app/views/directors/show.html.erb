@@ -19,9 +19,12 @@
               <dt>Born on</dt>
               <dd><%= @director.born_on %></dd>
 
-              <dt>Image url</dt>
-              <dd><%= @director.image_url %></dd>
-
+              <dt>Image</dt>
+              <dd>
+                <div class="thumbnail">
+                  <%= image_tag @director.image_url %>
+                </div>
+              </dd>
             </dl>
             <div class="btn-group btn-group-justified">
               <%= link_to directors_url, :class => "btn btn-primary" do %>

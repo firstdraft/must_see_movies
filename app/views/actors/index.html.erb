@@ -25,19 +25,12 @@
         <h3 class="panel-title">Actor #<%= actor.id %></h3>
       </div>
       <div class="panel-body">
+        <div class="thumbnail">
+          <%= image_tag actor.image_url %>
+        </div>
         <dl>
           <dt>Name</dt>
           <dd><%= actor.name %></dd>
-
-          <dt>Bio</dt>
-          <dd><%= actor.bio %></dd>
-
-          <dt>Born on</dt>
-          <dd><%= actor.born_on %></dd>
-
-          <dt>Image url</dt>
-          <dd><%= actor.image_url %></dd>
-
         </dl>
         <div class="btn-group btn-group-justified">
           <%= link_to actor_url(actor), :class => "btn btn-primary" do %>

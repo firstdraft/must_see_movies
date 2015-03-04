@@ -25,6 +25,9 @@
         <h3 class="panel-title">Movie #<%= movie.id %></h3>
       </div>
       <div class="panel-body">
+        <div class="thumbnail">
+          <%= image_tag movie.image_url %>
+        </div>
         <dl>
           <dt>Title</dt>
           <dd><%= movie.title %></dd>
@@ -32,18 +35,8 @@
           <dt>Year</dt>
           <dd><%= movie.year %></dd>
 
-          <dt>Duration</dt>
-          <dd><%= movie.duration %></dd>
-
-          <dt>Description</dt>
-          <dd><%= movie.description %></dd>
-
-          <dt>Image url</dt>
-          <dd><%= movie.image_url %></dd>
-
           <dt>Director</dt>
           <dd><%= movie.director_id %></dd>
-
         </dl>
         <div class="btn-group btn-group-justified">
           <%= link_to movie_url(movie), :class => "btn btn-primary" do %>
