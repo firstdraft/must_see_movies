@@ -2,6 +2,14 @@
 
 In this project, we'll practice leveraging foreign keys to build rich relationships between our models.
 
+## Setup
+
+ - Clone.
+ - `bundle`
+ - `rake db:migrate`
+ - `rake db:seed`
+ - `rails s`
+
 ## Step 1: Remove foreign keys from views
 
 Even though we decided that ID numbers were the best way to tie models together, we definitely don't want users to have to see them anywhere. Right now, for example, on the movies#index and movies#show pages, we are displaying raw director ID numbers instead of something more helpful, like the director's name.
