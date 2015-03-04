@@ -35,7 +35,7 @@
               Movie
             </label>
             <div class="col-sm-10">
-              <input type="text" id="movie_id" name="movie_id" placeholder="Movie" class="form-control" value="<%= @role.movie_id %>">
+              <%= select_tag :movie_id, options_from_collection_for_select(Movie.order("title ASC"), :id, :title, @role.movie_id), :class => "form-control" %>
             </div>
           </div>
 
@@ -45,7 +45,7 @@
               Actor
             </label>
             <div class="col-sm-10">
-              <input type="text" id="actor_id" name="actor_id" placeholder="Actor" class="form-control" value="<%= @role.actor_id %>">
+              <%= select_tag :actor_id, options_from_collection_for_select(Actor.order("name ASC"), :id, :name, @role.actor_id), :class => "form-control" %>
             </div>
           </div>
 

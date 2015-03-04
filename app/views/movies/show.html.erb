@@ -17,7 +17,7 @@
               <dd><%= @movie.year %></dd>
 
               <dt>Director</dt>
-              <dd><%= @movie.director_id %></dd>
+              <dd><%= @movie.director.name %></dd>
 
               <dt>Duration</dt>
               <dd><%= @movie.duration %> minutes</dd>
@@ -46,6 +46,14 @@
           </div>
         </div>
       </div>
+
+      <ul class="list-group">
+        <li class="list-group-item active">Filmography</li>
+        <% @movie.roles.each do |role| %>
+          <li class="list-group-item"><%= role.character_name %> (<%= link_to role.actor.name, role.actor %>)</li>
+        <% end %>
+      </ul>
+
     </div>
   </div>
 </div>
