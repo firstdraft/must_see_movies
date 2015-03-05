@@ -9,26 +9,33 @@ class MoviesControllerTest < ActionController::TestCase
   test "index should render all director names" do
     get :index
     Movie.all.each do |movie|
-      assert_select 'dd', {text: movie.director.name}
+      assert_select 'dd', { text: regex_string(movie.director.name) }
     end
   end
 
   test "show should render director name" do
     get :show, id: @godfather
-    assert_select 'dd', {text: @godfather.director.name}
+    assert_select 'dd', { text: regex_string(@godfather.director.name) }
   end
 
   test "show should render roles by character name" do
     get :show, id: @godfather
     @godfather.roles.each do |role|
-      assert_select 'li', /#{Regexp.quote(role.character_name)}/
+      assert_select 'li', { text: regex_string(role.character_name) }
+    end
+  end
+
+  test "show should render cast actors by name" do
+    get :show, id: @godfather
+    @godfather.actors.each do |actor|
+      assert_select 'li', { text: regex_string(actor.name) }
     end
   end
 
   test "new should render form with select for directors" do
     get :new
     Director.all.each do |director|
-      assert_select 'option', {text: director.name}
+      assert_select 'option', { text: regex_string(director.name) }
       assert_select "[value='#{director.id}']"
     end
   end
@@ -36,7 +43,7 @@ class MoviesControllerTest < ActionController::TestCase
   test "edit should render form with select for directors" do
     get :edit, id: @godfather
     Director.all.each do |director|
-      assert_select 'option', {text: director.name}
+      assert_select 'option', { text: regex_string(director.name) }
       assert_select "[value='#{director.id}']"
     end
   end
