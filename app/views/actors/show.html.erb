@@ -40,6 +40,14 @@
           </div>
         </div>
       </div>
+
+      <ul class="list-group">
+        <li class="list-group-item active">Filmography</li>
+        <% @actor.roles.each do |role| %>
+          <li class="list-group-item"><%= role.character_name %> (<%= link_to role.movie.title, role.movie %>)</li>
+        <% end %>
+      </ul>
+
     </div>
   </div>
 </div>
