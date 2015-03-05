@@ -36,7 +36,7 @@
           <dd><%= movie.year %></dd>
 
           <dt>Director</dt>
-          <dd><%= movie.director_id %></dd>
+          <dd><%= movie.director.name %></dd>
         </dl>
         <div class="btn-group btn-group-justified">
           <%= link_to movie_url(movie), :class => "btn btn-primary" do %>
